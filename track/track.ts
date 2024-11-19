@@ -1,4 +1,4 @@
-import "../instrument.js";
+// import "../instrument.js";
 import { api } from "encore.dev/api";
 import { fpx } from "../carriers/4px";
 
