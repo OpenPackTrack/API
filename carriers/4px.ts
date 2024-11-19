@@ -57,6 +57,7 @@ function mapToNewSchema(apiResponse: External4PXApiResponse): NewSchema {
 export const fpx = api(
   { method: "POST", path: "/hello" },
   async (p: RefData): Promise<Response> => {
+    try{
     const traceid = p.id;
     const url = 'https://track.4px.com/track/v2/front/listTrackV2';
 
@@ -94,7 +95,12 @@ export const fpx = api(
       console.error("Error:", error);
       throw error;
     }
+  } catch (error) {
+    //send error back to the track service
+    throw error;
+  }
   },
+
 );
 
 interface LatLng {
