@@ -55,7 +55,7 @@ function mapToNewSchema(apiResponse: External4PXApiResponse): NewSchema {
 }
 
 export const fpx = api(
-  { method: "POST", path: "/hello" },
+  { expose: false },
   async (p: RefData): Promise<Response> => {
     try{
     const traceid = p.id;

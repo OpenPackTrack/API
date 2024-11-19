@@ -1,19 +1,25 @@
 // import "../instrument.js";
 import { api } from "encore.dev/api";
 import { fpx } from "../carriers/4px";
-import { timeStamp } from "console";
-
+import { asendia } from "../carriers/asendia";
 
 export const get = api(
   { expose: true, method: "GET", path: "/track/:id/:carrier" },
   async ({ id, carrier  }: { id: string, carrier: string }): Promise<Response> => {
     try {
-    if(carrier === "4px") {
     console.log("trackingID:", id);
+
+    if(carrier === "4px") {
     const response = await fpx({ id });
     const data = response.message;
     //console.log("Response Data:", data);
     return data;
+    } else if(carrier === "asendia") {
+    const response = await asendia({ id });
+    const data = response.message;
+    //console.log("Response Data:", data);
+    return data;
+
     } else {
       return {
         echo: {
