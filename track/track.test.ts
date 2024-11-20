@@ -10,6 +10,7 @@ describe("get", () => {
     });
 
     test("should throw an error for unsupported carrier", async () => {
-        await expect(get({ id: "12345", carrier: "unsupported" })).rejects.toThrow("Carrier unsupported not supported");
+        const mockResponse = {"echo":{"trackingID":"12345"},"data":{"currentStatus":"Error","currentStatusDescription":"Carrier not supported","destination":{"code":"AQ","name":"Antartica"},"origin":{"code":"AQ","name":"Antartica"},"transitEvents":[{"date":"0","description":"This Tracking ID is not supported by the carrier: 4PX (we're currently in the process of adding more carriers, check back soon!)","location":""}]}};
+        await expect(await get({ id: "12345", carrier: "unsupported" })).toEqual(mockResponse);
     });
 });
