@@ -1,24 +1,19 @@
 {
-  "name": "encore-ts-starter",
-  "private": true,
-  "version": "0.0.1",
-  "description": "Encore Typescript Starter",
-  "license": "MPL-2.0",
-  "type": "module",
+  "name": "openpacktrack",
+  "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
-    "test": "vitest"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "devDependencies": {
-    "@types/node": "^20.5.7",
-    "typescript": "^5.2.2",
-    "vitest": "^1.5.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OpenPackTrack/API.git"
   },
-  "dependencies": {
-    "@sentry/node": "^8.38.0",
-    "@sentry/profiling-node": "^8.38.0",
-    "encore.dev": "^1.43.12"
+  "author": "",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/OpenPackTrack/API/issues"
   },
-  "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "^4.13.0"
-  }
+  "homepage": "https://github.com/OpenPackTrack/API#readme",
+  "description": ""
 }
